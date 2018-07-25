@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body>
+    
+
+   
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container"> -->
+            <div class="jumbotron navbar navbar-default navbar-fixed"> 
+                <h1>Our Awesome Blogs</h1>
+                <a class="btn btn-primary" href="http://localhost:3000/">home</a>
+                <a class="btn btn-primary" href="posts">archived</a>
+                <a class="btn btn-primary" href="new">post new</a>
+          
+              </div>
+        </div>
+      </nav>
+    
+  <!-- <div class="jumbotron"> 
+    <h1>Blog Site</h1>
+    <a class="btn btn-primary" href="">click</a>
+  </div> -->
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+
+  <div class="container">
+      <div class="row">
+
+       
+ 
+  <% if (posts.length !=0) { %>
+    <% posts.forEach(function(post){  %>
+
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <!-- </div> -->
+      
+      <div class="panel panel-success">
+
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= post.title %></h3>
+          </div>
+    
+          <div class="panel-body">
+              <%- post.content %>
+              <%- post.date %>
+          </div>
+    
+          <div class="panel-footer">Author: <%= post.author %>
+        </div>
+      
+      </div>
+    </div>
+    <% }); %>
+    <%} else {%>
+    <p>You have no blog posts</p>
+    
+  <% } %>
+  </body>
+</html>
