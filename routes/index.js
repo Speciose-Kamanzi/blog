@@ -36,9 +36,10 @@ router.get('/edit/:id', function(req, res, next) {
 });
 
 router.post("/edit/:id", function(req, res, next){
-  console.log(req.params.id)
+  // console.log(req.params.id)
   request({
-    url:"http://localhost:3000/posts/"+req.params.id,
+    url:"http://localhost:3004/posts/"+req.params.id,
+    method:"PATCH",
     form:{
     "title": req.body.title, 
     "author": req.body.author,
@@ -50,20 +51,12 @@ router.post("/edit/:id", function(req, res, next){
   }
   })
     res.redirect("/")
-  request.post({
-    url: 'http://localhost:3004/posts',
-    body:obj,
-    json:true
-  
-  }, function(error, response, body){
-    res.redirect('/');
-  });
 });
 
 // delete post
-router.get('/delet/:id', function(req, res, next){
+router.get('/delete/:id', function(req, res, next){
  request({
-   url:"http://localhost:3004/posts"+req.params.id,
+   url:"http://localhost:3004/posts/"+req.params.id,
    method:"DELETE",
    function(error,response,body){
      res.render("index", {message:"successfully deleted"});
