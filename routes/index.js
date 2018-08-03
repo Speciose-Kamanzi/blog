@@ -11,15 +11,85 @@ router.get('/', function(req, res, next) {
 
 /* posts page. */
 router.get('/posts', function(req, res, next) {
-
+  console.log(Posts);
   res.render('posts', { title: 'posts', posts: Posts.posts });
 });
 
 /* create new page. */
 router.get('/new', function(req, res, next) {
-  
   res.render('new', { title: "New Posts"});
 });
+
+// register page
+router.get('/login', function(req, res, next) {
+  
+  res.render('login', { title: "login"});
+});
+router.post('/login', function (req, res, next){
+  var users = posts.users;
+  console.log(users);
+
+  var username = req.body.username;
+  var password = req.body.password;
+
+  for(let i = 0; i < users.length; i++){
+    const user = user[i];
+    console.log(user); 
+    if(username === user.username && password == user.password){
+      res.redirect('/');
+    } else {
+      continue;
+    }
+  }
+});
+
+router.get('/login', function (req, res, next){
+  res.render('register', {
+    title: 'login'
+  });
+});
+
+// register
+router.get('/register', function(req, res, next) {
+  var posts = Posts.posts;
+  
+  res.render('register', { title: "register", posts: posts.posts, users: posts.users, message: false});
+});
+
+router.post('/register', function (req, res, next){
+  var id = posts.users[post.users.length-1].id + 1;
+
+  var obj = {
+    "id": req.body.id,
+    "username": req.res.username,
+    "password": req.body.password,
+    "email": req.body.email
+  }
+  request.post({
+
+    url: "http://localhost:3000/login",
+    body: obj,
+    json: true
+
+  })
+  res.redirect('/')
+});
+
+// view page
+router.get('/view/:id', function(req, res, next) {
+  var id;
+  var post = Posts.posts; 
+
+   for(var i= 0; i < post.length; i++){
+     if(post[i].id == req.params.id){
+       id = i;
+   }
+  }
+  res.render('view', { title: 'view posts', posts: Posts.posts, id: id });
+   
+});
+
+
 
 // edit page
 router.get('/edit/:id', function(req, res, next) {

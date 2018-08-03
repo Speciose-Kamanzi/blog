@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +16,7 @@
                   <h1>Welcome Home</h1>
                   <a class="btn btn-primary" href="http://localhost:3000/">home</a>
                   <a class="btn btn-primary" href="posts">archived</a>
-                  <a class="btn btn-primary" href="new">post new</a>
+                  <a class="btn btn-primary" href="#">post new</a>
             
                 </div>
           </div>
@@ -25,43 +26,31 @@
     <p>Welcome to <%= title %></p>
 
     <div class="container">
-        <div class="row">
-
-         
-   
-    <% if (posts.length !=0) { %>
-      <% posts.forEach(function(post){  %>
-
-        <div class="col-xs-12 col-md-4 col-lg-4 ">
-          
+        <div class="row">        
         
         <div class="panel panel-success">
 
             <div class="panel-heading">
-              <h2 class="panel-title"><%= post.title %></h2>
+              <h2 class="panel-title"><%- posts[id].title%></h2>
              
             </div>
       
             <div class="panel-body">
-              <img src="<%- post.image %>" alt="" class="image" height="400px">
-                <p><%- post.content.substring(0,150) %>...</p>
-                <h4><%- post.date %></h4>
-                <a class="btn btn-primary" href="/edit/<%= post.id %>">Edit</a>
-                <a class="btn btn-primary" href="/delete/<%= post.id %>">delete</a>
-                <a class="btn btn-primary" href="/view/<%= post.id %>">Read More</a>
+              <img src="<%- posts[id].image%>" alt="" class="image">
+              <p><%- posts[id].content %></p>
+             
+                <h4><%- posts[id].date %></h4>
+                <a class="btn btn-primary" href="/edit/<%= posts[id].id %>">Edit</a>
+                <a class="btn btn-primary" href="/delete/<%= posts[id].id %>">delete</a>
+                
 
             </div>
       
-            <div class="panel-footer">Author: <%= post.author %>
+            <div class="panel-footer">Author: <%= posts[id].author %>
              
           </div>
         
         </div>
-      </div>
-      <% }); %>
-      <%} else {%>
-      <p>You have no blog posts</p>
-      
-    <% } %>
+    
   </body>
 </html>

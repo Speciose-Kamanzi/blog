@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": "1",
+      "id": 1,
       "title": "The Zulu Queen",
       "author": "Speciose Kamanzi",
       "date": "09/02/2018",
@@ -9,7 +9,7 @@
       "image": "https://i.pinimg.com/564x/bd/09/ee/bd09ee7a2aeaadb383b4877dacf2846f.jpg"
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Ace That Interview",
       "author": "Speciose Kamanzi",
       "date": "16/02/2018",
@@ -17,7 +17,7 @@
       "image": "https://i.pinimg.com/564x/f6/1d/c3/f61dc302c3f905ec616f847aceda5db5.jpg"
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Something For The Princess",
       "author": "Speciose Kamanzi",
       "date": "29/02/2018",
@@ -25,17 +25,11 @@
       "image": "https://i.pinimg.com/564x/1e/ac/95/1eac951013a81d6cb4a8af8ecd444b97.jpg"
     },
     {
-      "title": "mmxposj",
-      "date": "02150",
-      "content": "<p>lksxmkj</p>",
-      "id": "qAluX4p"
-    },
-    {
-      "title": "kenya",
-      "author": "spesh",
-      "date": "020508",
-      "content": "<p>hgdyugsughusixokp[[su7tffsjayytfvbzy uiigb sc ygb siy suyh yfsuhiiy fsa</p>",
-      "id": "vC5WfzJ"
+      "title": "vicario",
+      "author": "sjhxug",
+      "date": "hgsxhgv",
+      "content": "<p>jhghsujabsujgbbc cjsnhxcjlkh jnskjns</p>",
+      "id": 4
     }
   ]
 }

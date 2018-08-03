@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -7,9 +7,7 @@ a {
   color: #00B7FF;
 }
 
-body { padding-top: 70px; }
-
-.image{
+body { padding-top: 20px; }
+.image {
   width: 100%;
-  height: auto;
 }
