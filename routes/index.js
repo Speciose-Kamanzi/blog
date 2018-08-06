@@ -45,7 +45,7 @@ router.post('/', function (req, res, next) {
         continue
       }
   }
-})
+});
 
 router.get('/login', function(req, res, next){
   res.render('login', {
@@ -54,29 +54,24 @@ router.get('/login', function(req, res, next){
 });
 
 // register
-router.get('/register', function(req, res, next) {
-  var posts = Posts.posts;
-  
-  res.render('register', { title: "register", posts: posts.posts, users: posts.users, message: false});
-});
-
-router.post('/register', function (req, res, next){
-  var id = posts.users[post.users.length-1].id + 1;
+router.post('/register', function (req,res, next){
+  var id = posts.users[posts.users.length-1].id + 1;
 
   var obj = {
-    "id": req.body.id,
-    "username": req.res.username,
+    "id": reeq.body.id,
+    "username": req.body.username,
     "password": req.body.password,
     "email": req.body.email
   }
   request.post({
 
-    url: "http://localhost:3000/login",
+    url: "http://localhost:3000/users",
     body: obj,
     json: true
+  }, function (error, response, body) {
 
-  })
-  res.redirect('/')
+  
+  });
 });
 
 // view page
