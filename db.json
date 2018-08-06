@@ -31,5 +31,22 @@
       "content": "<p>jhghsujabsujgbbc cjsnhxcjlkh jnskjns</p>",
       "id": 4
     }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "username": "Speciose Kamanzi",
+      "password": "2468",
+      "email": "rahmaspeciose@gmail.com"
+     
+    },
+    {
+      "id": 1,
+      "username": "xscdcvd",
+      "password": "09/02/2018",
+      "email": "vfcvfbe@gmail.com"
+    }
   ]
 }
+

@@ -20,32 +20,36 @@ router.get('/new', function(req, res, next) {
   res.render('new', { title: "New Posts"});
 });
 
-// register page
-router.get('/login', function(req, res, next) {
-  
-  res.render('login', { title: "login"});
+// login page
+router.get('/', function (req, res, next){
+  res.render('login', {
+    title: "Login", 
+    posts: posts.posts,
+    user: posts.users,
+    message: false
+  });
 });
-router.post('/login', function (req, res, next){
+router.post('/', function (req, res, next) {
   var users = posts.users;
   console.log(users);
 
-  var username = req.body.username;
+  var username = req.body.username; 
   var password = req.body.password;
 
-  for(let i = 0; i < users.length; i++){
-    const user = user[i];
-    console.log(user); 
-    if(username === user.username && password == user.password){
-      res.redirect('/');
-    } else {
-      continue;
-    }
+  for (let i = 0; i < users.length; i++){
+    const user = users[i];
+    console.log(user);
+      if (username === user.username && password == user.password) {
+    res.redirect('/index');
+      } else {
+        continue
+      }
   }
-});
+})
 
-router.get('/login', function (req, res, next){
-  res.render('register', {
-    title: 'login'
+router.get('/login', function(req, res, next){
+  res.render('login', {
+    title: 'Login'
   });
 });
 

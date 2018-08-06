@@ -1,6 +1,19 @@
 body {
+
   padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/../images/ws_Vintage_Purple_Pattern_1024x1024.jpg");
+  background-repeat: repeat-y;
+  background-size: 100%
+}
+
+
+
+
+.jumbotron{
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("/../images/byNsZSn.jpg") !important;
 }
 
 a {
